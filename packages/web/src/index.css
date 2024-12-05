@@ -6,6 +6,26 @@
   width: 100%;
 }
 
+.ais-SearchBox-form {
+  position: relative;
+}
+.ais-SearchBox-submit {
+  display: none; /* Oculta el icono de la lupa */
+}
+.ais-SearchBox-reset {
+  display: none; /* Oculta el botón de reset */
+}
+
+input {
+  background: white!important;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none;
+  color: black!important;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

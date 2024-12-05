@@ -34,7 +34,7 @@ const CartPage = () => {
                 >
                   <td className="py-3 px-6 text-left flex items-center">
                     <img
-                      src={item.image}
+                      src={item.image_url}
                       alt={item.name}
                       className="h-12 w-12 object-cover rounded mr-4"
                     />

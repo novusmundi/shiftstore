@@ -5,20 +5,20 @@ export default {
     extend: {
       colors: {
         river: {
-          primary: '#ffffff', // Blanco
-          secondary: '#ff0000', // Rojo
+          primary: '#f8f8f8', // Blanco elegante
+          secondary: '#d32f2f', // Rojo oscuro desaturado
         },
         boca: {
-          primary: '#0058a5', // Azul
-          secondary: '#ffcc00', // Amarillo
+          primary: '#355c7d', // Azul desaturado
+          secondary: '#ffcc67', // Amarillo pastel
         },
         racing: {
-          primary: '#78c4d4', // Celeste
-          secondary: '#ffffff', // Blanco
+          primary: '#b2ebf2', // Celeste pastel
+          secondary: '#e0f7fa', // Blanco con tinte celeste
         },
         aldosivi: {
-          primary: '#007a33', // Verde
-          secondary: '#ffd700', // Amarillo
+          primary: '#82c596', // Verde pastel
+          secondary: '#ffe082', // Amarillo cálido
         },
       },
     },
