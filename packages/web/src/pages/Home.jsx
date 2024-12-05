@@ -298,72 +298,80 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-neutral-dark mb-6">
-        Productos Destacados
-      </h1>
-      {confirmationMessage && (
-        <div className="mb-4 p-4 bg-green-100 text-green-800 rounded transition-opacity duration-300 ease-in-out">
-          {confirmationMessage}
-        </div>
-      )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {selectedProducts.map((product) => (
-          <div
-            key={product.id}
-            onClick={() => setTeam(product.team)}
-            className={`border rounded-lg shadow hover:shadow-lg transition-shadow p-4 ${
+    <h1 className="text-3xl font-bold text-gray-900 mb-6">
+      Productos Destacados
+    </h1>
+    {confirmationMessage && (
+      <div className="mb-4 p-4 bg-green-100 text-green-800 rounded transition-opacity duration-300 ease-in-out">
+        {confirmationMessage}
+      </div>
+    )}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {selectedProducts.map((product) => (
+        <div
+          key={product.id}
+          onClick={() => setTeam(product.team)}
+          className={`border rounded-lg shadow hover:shadow-lg transition-shadow p-4 ${
+            product.team === 'boca'
+              ? 'bg-boca-primary'
+              : `bg-${product.team}-secondary`
+          }`}
+        >
+          <img
+            src={product.image_url}
+            alt={product.name}
+            className="h-40 w-full object-cover rounded-lg mb-4"
+          />
+          <h2
+            className={`text-lg font-bold mb-2 ${
               product.team === 'boca'
-                ? 'bg-boca-primary'
-                : `bg-${product.team}-secondary`
+                ? 'text-boca-secondary'
+                : product.team === 'racing'
+                ? 'text-gray-900' /* Texto negro fijo para Racing */
+                : `text-${product.team}-primary`
             }`}
           >
-            <img
-              src={product.image_url}
-              alt={product.name}
-              className="h-40 w-full object-cover rounded-lg mb-4"
-            />
-            <h2
-              className={`text-lg font-bold ${
-                product.team === 'boca'
-                  ? 'text-boca-secondary'
-                  : `text-${product.team}-primary`
-              } mb-2`}
-            >
-              {product.name}
-            </h2>
-            <p
-              className={`font-bold text-xl mt-2 ${
-                product.team === 'boca'
-                  ? 'text-boca-secondary'
-                  : `text-${product.team}-primary`
-              }`}
-            >
-              ${product.price}
-            </p>
-            <Link
-              to={`/product/${product.id}`}
-              className={`block font-semibold mt-4 transition-colors ${
-                product.team === 'boca'
-                  ? 'text-boca-secondary hover:text-boca-primary'
-                  : `text-${product.team}-primary hover:text-${product.team}-secondary`
-              }`}
-            >
-              Ver Detalles
-            </Link>
-            <button
-              onClick={() => addToCart(product)}
-              className={`mt-4 px-4 py-2 rounded-lg transition-colors ${
-                product.team === 'boca'
-                  ? 'bg-boca-secondary text-boca-primary hover:bg-boca-primary hover:text-boca-secondary'
-                  : `bg-${product.team}-primary text-${product.team}-secondary hover:bg-${product.team}-secondary hover:text-${product.team}-primary`
-              }`}
-            >
-              Agregar al Carrito
-            </button>
-          </div>
-        ))}
-      </div>
+            {product.name}
+          </h2>
+          <p
+            className={`font-bold text-xl mt-2 ${
+              product.team === 'boca'
+                ? 'text-boca-secondary'
+                : product.team === 'racing'
+                ? 'text-gray-900' /* Texto negro fijo para Racing */
+                : `text-${product.team}-primary`
+            }`}
+          >
+            ${product.price}
+          </p>
+          <Link
+            to={`/product/${product.id}`}
+            className={`block font-semibold mt-4 transition-colors ${
+              product.team === 'boca'
+                ? 'text-boca-secondary hover:text-boca-primary'
+                : product.team === 'racing'
+                ? 'text-gray-900 hover:text-gray-700' /* Ajuste para Racing */
+                : `text-${product.team}-primary hover:text-${product.team}-secondary`
+            }`}
+          >
+            Ver Detalles
+          </Link>
+          <button
+            onClick={() => addToCart(product)}
+            className={`mt-4 px-4 py-2 rounded-lg transition-colors ${
+              product.team === 'boca'
+                ? 'bg-boca-secondary text-boca-primary hover:bg-boca-primary hover:text-boca-secondary'
+                : product.team === 'racing'
+                ? 'bg-gray-900 text-white hover:bg-gray-700 hover:text-white' /* Botón oscuro para Racing */
+                : `bg-${product.team}-primary text-${product.team}-secondary hover:bg-${product.team}-secondary hover:text-${product.team}-primary`
+            }`}
+          >
+            Agregar al Carrito
+          </button>
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
 
