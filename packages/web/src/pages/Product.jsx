@@ -1,8 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useTeam } from '../context/TeamContext';
 
 const ProductPage = () => {
   const { id } = useParams();
+  const { team } = useTeam();
   const { addToCart, confirmationMessage } = useCart();
 
   // Simulando datos del producto (puedes reemplazar esto con datos reales o una API)
@@ -15,7 +17,7 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="container mx-auto py-6">
+    <div className={`bg-${team}-primary text-${team}-secondary min-h-screen p-6`}>
       <Link to="/" className="text-primary-light hover:text-primary-dark mb-4 inline-block">
         &larr; Volver a Inicio
       </Link>

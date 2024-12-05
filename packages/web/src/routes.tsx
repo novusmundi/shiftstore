@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import ProductPage from './pages/Product';
 import CartPage from './pages/Cart';
-import Navbar from './components/Navbar';
+
 
 const AppRoutes = () => {
   return (

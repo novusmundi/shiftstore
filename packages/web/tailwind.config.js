@@ -1,33 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: {
-          light: '#007BFF', // Azul eléctrico
-          DEFAULT: '#0056b3', // Azul oscuro
-          dark: '#003f7f', // Azul más oscuro
+        river: {
+          primary: '#ffffff', // Blanco
+          secondary: '#ff0000', // Rojo
         },
-        secondary: {
-          light: '#FFC107', // Amarillo dorado
-          DEFAULT: '#FFA000', // Amarillo más oscuro
-          dark: '#FF8F00', // Amarillo quemado
+        boca: {
+          primary: '#0058a5', // Azul
+          secondary: '#ffcc00', // Amarillo
         },
-        neutral: {
-          light: '#F5F5F5', // Gris claro
-          DEFAULT: '#333333', // Gris oscuro
-          dark: '#1C1C1C', // Gris muy oscuro
+        racing: {
+          primary: '#78c4d4', // Celeste
+          secondary: '#ffffff', // Blanco
         },
-        success: '#28A745', // Verde suave
-        error: '#FF6F61', // Rojo coral
-        accent: {
-          vintage: '#8E9E5D', // Verde oliva
-          retro: '#D4AF37', // Dorado
-          neon: '#00FFFF', // Azul neón
+        aldosivi: {
+          primary: '#007a33', // Verde
+          secondary: '#ffd700', // Amarillo
         },
       },
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /(bg|text|border)-(river|boca|racing|aldosivi)-(primary|secondary)/,
+      variants: ['hover', 'focus'],
+    },
+  ],
 };
